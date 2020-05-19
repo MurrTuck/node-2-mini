@@ -23,7 +23,7 @@ module.exports = {
         const { book_id } = req.params
         const { title, author } = req.body
 
-        const index = books.findIndex(element => element.id === +book_id)
+        const index = books.findIndex((element) => element.id === +book_id)
 
         if (index === -1) {
             return res.status(404).send('Book not found')
@@ -44,7 +44,7 @@ module.exports = {
             return res.status(404).send('Book not found')
         }
 
-        book_id.splice(index, 1)
+        books.splice(index, 1)
 
         res.status(200).send(books)
 
